@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="LogoMorph 是一个图片生成 Logo 的 AI 工具站，支持 PNG、JPG、JPEG 上传和拖拽生成体验。"
+    />
+    <title>LogoMorph - 图片生成 Logo 工具站</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="LogoMorph 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span>
+        </span>
+        <span class="brand-name">LogoMorph</span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#cases">案例</a>
+        <a href="#workflow">流程</a>
+        <a href="#platform">平台能力</a>
+        <a href="#pricing">服务</a>
+        <a href="#about">关于我们</a>
+      </nav>
+      <a class="nav-action" href="#studio">开始生成</a>
+    </header>
+
+    <main id="top">
+      <section class="studio-section" id="studio" aria-labelledby="studio-title">
+        <div class="studio-copy">
+          <p class="eyebrow">Image to Logo AI Studio</p>
+          <h1 id="studio-title">让每张图片，长成一个品牌标志。</h1>
+          <p class="lead">
+            上传产品照、店面图、手稿或灵感图片，LogoMorph 会提取视觉特征，快速生成可用于品牌探索的 Logo 方向。
+          </p>
+          <div class="studio-actions" aria-label="核心能力">
+            <a class="primary-button" href="#uploader">
+              <span class="button-icon" aria-hidden="true">+</span>
+              上传图片
+            </a>
+            <a class="secondary-button" href="#cases">查看案例</a>
+          </div>
+          <dl class="signal-row">
+            <div>
+              <dt>10MB</dt>
+              <dd>单张上限</dd>
+            </div>
+            <div>
+              <dt>PNG/JPG</dt>
+              <dd>主流格式</dd>
+            </div>
+            <div>
+              <dt>3+</dt>
+              <dd>风格方向</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="studio-workbench" aria-label="图片生成 Logo 工作台">
+          <label class="drop-zone" id="uploader" for="image-input" tabindex="0">
+            <input id="image-input" type="file" accept="image/png,image/jpeg" />
+            <span class="drop-visual" aria-hidden="true">
+              <span class="drop-core"></span>
+            </span>
+            <span class="drop-title">点击上传，或拖拽图片到这里</span>
+            <span class="drop-note">支持 PNG、JPG、JPEG，文件不超过 10MB</span>
+            <span class="drop-cta">选择图片</span>
+          </label>
+
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+
+          <section class="result-stage" aria-label="生成结果">
+            <div class="preview-panel" id="preview-panel">
+              <div class="empty-preview">
+                <span class="empty-symbol" aria-hidden="true"></span>
+                <p>上传后将在这里预览原图与生成方向</p>
+              </div>
+            </div>
+            <div class="result-panel" id="result-panel">
+              <div class="result-heading">
+                <div>
+                  <p class="panel-kicker">AI Logo Directions</p>
+                  <h2>生成结果</h2>
+                </div>
+                <button class="ghost-button" type="button" id="regenerate-button" disabled>
+                  <span aria-hidden="true">↻</span>
+                  换一组
+                </button>
+              </div>
+              <div class="generation-state" id="generation-state">
+                <span></span>
+                <p>等待图片上传</p>
+              </div>
+              <div class="logo-results" id="logo-results" aria-live="polite"></div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="status-strip" aria-label="服务规格">
+        <div>
+          <strong>格式识别</strong>
+          <span>PNG / JPG / JPEG</span>
+        </div>
+        <div>
+          <strong>上传限制</strong>
+          <span>10MB 以内</span>
+        </div>
+        <div>
+          <strong>设计输出</strong>
+          <span>字标、徽章、符号、品牌色</span>
+        </div>
+        <div>
+          <strong>接口预留</strong>
+          <span>可接入真实生成模型</span>
+        </div>
+      </section>
+
+      <section class="section-shell" id="cases" aria-labelledby="cases-title">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Cases</p>
+          <h2 id="cases-title">从图片到 Logo 的几种典型场景</h2>
+          <p>案例展示不同输入如何被提炼成更适合品牌识别的图形语言。</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-card">
+            <div class="case-art cafe" aria-hidden="true">
+              <span class="photo-shape"></span>
+              <span class="logo-shape">Brew</span>
+            </div>
+            <h3>咖啡馆门面</h3>
+            <p>从门头、窗格与杯型中提炼线性徽章，适合本地生活品牌。</p>
+          </article>
+          <article class="case-card">
+            <div class="case-art clay" aria-hidden="true">
+              <span class="photo-shape"></span>
+              <span class="logo-shape">TERRA</span>
+            </div>
+            <h3>手作陶器</h3>
+            <p>保留器物轮廓与温润色彩，生成更有手工感的字标方向。</p>
+          </article>
+          <article class="case-card">
+            <div class="case-art sneaker" aria-hidden="true">
+              <span class="photo-shape"></span>
+              <span class="logo-shape">KIX</span>
+            </div>
+            <h3>运动鞋照片</h3>
+            <p>提取速度线、鞋底纹理和对比色，形成年轻动感的符号。</p>
+          </article>
+          <article class="case-card">
+            <div class="case-art plant" aria-hidden="true">
+              <span class="photo-shape"></span>
+              <span class="logo-shape">ROOT</span>
+            </div>
+            <h3>植物灵感图</h3>
+            <p>把叶脉、枝干与自然曲线转译成适合生活方式品牌的图形。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow-band" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Workflow</p>
+          <h2 id="workflow-title">四步完成品牌标志探索</h2>
+        </div>
+        <ol class="workflow-list">
+          <li>
+            <span>01</span>
+            <h3>上传图片</h3>
+            <p>支持点击上传与拖拽上传，进入热区时提供明确反馈。</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>提取特征</h3>
+            <p>分析轮廓、色彩、材质和场景关键词。</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>生成方向</h3>
+            <p>输出字标、符号、徽章等多种 Logo 草案。</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h3>精修导出</h3>
+            <p>为后续真实接口预留品牌包与矢量导出能力。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section-shell" id="platform" aria-labelledby="platform-title">
+        <div class="section-heading">
+          <p class="eyebrow">Platform Capability</p>
+          <h2 id="platform-title">不只是单次生成，而是一套 Logo 服务平台</h2>
+          <p>从灵感输入到品牌资产沉淀，覆盖设计师与小团队的常见工作流。</p>
+        </div>
+        <div class="platform-grid">
+          <article class="feature-tile wide">
+            <span class="tile-index">01</span>
+            <h3>品牌语义提取</h3>
+            <p>基于图片内容生成关键词、风格标签和品牌调性，帮助用户理解“为什么这样设计”。</p>
+          </article>
+          <article class="feature-tile">
+            <span class="tile-index">02</span>
+            <h3>风格系统</h3>
+            <p>支持极简、复古、科技、手作、潮流等方向。</p>
+          </article>
+          <article class="feature-tile">
+            <span class="tile-index">03</span>
+            <h3>品牌色板</h3>
+            <p>从原图提炼主色、辅助色和高亮色。</p>
+          </article>
+          <article class="feature-tile">
+            <span class="tile-index">04</span>
+            <h3>批量探索</h3>
+            <p>适合电商 SKU、活动项目和多品牌孵化场景。</p>
+          </article>
+          <article class="feature-tile wide accent">
+            <span class="tile-index">05</span>
+            <h3>API Ready</h3>
+            <p>当前版本已预留生成函数边界，后续可接入 OpenAI 或其他图像模型，扩展为真实生产服务。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="pricing-band" id="pricing" aria-labelledby="pricing-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Service</p>
+          <h2 id="pricing-title">从个人试用到团队交付</h2>
+        </div>
+        <div class="plan-grid">
+          <article class="plan-card">
+            <p class="plan-name">Starter</p>
+            <h3>灵感探索</h3>
+            <p>适合快速验证 logo 风格、活动项目和早期品牌命名。</p>
+            <a href="#studio">开始试用</a>
+          </article>
+          <article class="plan-card featured-plan">
+            <p class="plan-name">Studio</p>
+            <h3>设计工作台</h3>
+            <p>适合设计师批量探索、管理风格方向并沉淀品牌色板。</p>
+            <a href="#studio">进入工作台</a>
+          </article>
+          <article class="plan-card">
+            <p class="plan-name">Business</p>
+            <h3>平台接入</h3>
+            <p>适合产品团队把图片生成 Logo 能力接入自有流程。</p>
+            <a href="#platform">查看能力</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div>
+          <p class="eyebrow">About Us</p>
+          <h2 id="about-title">我们相信 Logo 应该从真实灵感里长出来</h2>
+        </div>
+        <p>
+          LogoMorph 面向需要快速启动品牌视觉的人：独立设计师、创业团队、电商品牌和内容创作者。我们把 AI 生成、设计判断与可理解的交互流程结合起来，让用户从一张图片开始，就能看到清晰的品牌方向。
+        </p>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">常见问题</h2>
+        </div>
+        <div class="faq-grid">
+          <details>
+            <summary>现在是真实 AI 生成吗？</summary>
+            <p>当前版本是前端 MVP，已预留真实生成接口边界，方便后续接入模型服务。</p>
+          </details>
+          <details>
+            <summary>上传图片会被保存吗？</summary>
+            <p>这个静态版本只在浏览器本地预览，不会上传到服务器。</p>
+          </details>
+          <details>
+            <summary>支持哪些图片格式？</summary>
+            <p>支持 PNG、JPG、JPEG，单张图片大小不超过 10MB。</p>
+          </details>
+          <details>
+            <summary>后续可以做成商业平台吗？</summary>
+            <p>可以。页面结构已包含 API、批量处理、品牌包和团队审阅等平台能力入口。</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="#top" aria-label="LogoMorph 首页">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span>
+          </span>
+          <span class="brand-name">LogoMorph</span>
+        </a>
+        <p>Let every image grow into a brand mark.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#cases">案例</a>
+        <a href="#platform">平台能力</a>
+        <a href="#about">关于我们</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

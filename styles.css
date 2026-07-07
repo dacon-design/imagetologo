@@ -391,9 +391,19 @@ h1 {
   min-width: 112px;
   min-height: 38px;
   border-radius: 999px;
-  background: var(--lime);
-  color: var(--ink);
+  background: var(--aqua);
+  color: #092b27;
   font-weight: 900;
+  box-shadow: 0 10px 24px rgba(37, 203, 189, 0.24);
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.drop-zone:hover .drop-cta,
+.drop-zone:focus-visible .drop-cta,
+.drop-zone.drag-over .drop-cta {
+  background: var(--coral);
+  color: var(--ink);
+  transform: translateY(-1px);
 }
 
 .form-message {
@@ -750,16 +760,82 @@ h1 {
 
 .case-art.cafe {
   background:
-    linear-gradient(90deg, rgba(24, 23, 20, 0.16) 8%, transparent 8% 16%, rgba(24, 23, 20, 0.16) 16% 24%, transparent 24%),
-    linear-gradient(145deg, #f3d8a8, #b96f42);
+    linear-gradient(135deg, rgba(255, 254, 250, 0.42), transparent 42%),
+    linear-gradient(155deg, #f4d6b0 0%, #ad6843 58%, #4d2d24 100%);
 }
 
-.case-art.cafe .photo-shape {
-  border-radius: 48px 48px 8px 8px;
+.case-art.cafe .coffee-cup {
+  position: absolute;
+  left: 24px;
+  top: 32px;
+  display: grid;
+  width: 118px;
+  height: 104px;
+  place-items: center;
+  border: 3px solid rgba(255, 254, 250, 0.86);
+  border-radius: 18px 18px 44px 44px;
+  background:
+    linear-gradient(180deg, rgba(255, 254, 250, 0.96), rgba(242, 216, 190, 0.92));
+  box-shadow: 18px 18px 0 rgba(59, 34, 24, 0.18);
+}
+
+.case-art.cafe .coffee-cup::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  top: 24px;
+  width: 30px;
+  height: 40px;
+  border: 8px solid rgba(255, 254, 250, 0.86);
+  border-left: 0;
+  border-radius: 0 28px 28px 0;
+}
+
+.case-art.cafe .coffee-cup span {
+  width: 52px;
+  height: 26px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 45%, rgba(255, 255, 255, 0.84) 0 18%, transparent 19%),
+    linear-gradient(135deg, #8c4c32, #e0a477);
+}
+
+.case-art.cafe .coffee-bean {
+  position: absolute;
+  width: 34px;
+  height: 48px;
+  border-radius: 50%;
+  background: #5a3023;
+  transform: rotate(32deg);
+}
+
+.case-art.cafe .coffee-bean::after {
+  content: "";
+  position: absolute;
+  inset: 8px 15px;
+  border-left: 2px solid rgba(255, 254, 250, 0.52);
+  border-radius: 50%;
+}
+
+.case-art.cafe .bean-one {
+  right: 80px;
+  top: 26px;
+}
+
+.case-art.cafe .bean-two {
+  right: 42px;
+  top: 58px;
+  transform: rotate(-22deg);
 }
 
 .case-art.cafe .logo-shape {
-  border: 8px double var(--ink);
+  right: 18px;
+  bottom: 18px;
+  width: 126px;
+  height: 78px;
+  border: 8px double #4d2d24;
+  background: #fff2d8;
+  color: #4d2d24;
 }
 
 .case-art.clay {

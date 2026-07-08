@@ -390,19 +390,27 @@ h1 {
   justify-content: center;
   min-width: 112px;
   min-height: 38px;
+  border: 1px solid rgba(24, 23, 20, 0.12);
   border-radius: 999px;
   background: var(--aqua);
   color: #092b27;
   font-weight: 900;
   box-shadow: 0 10px 24px rgba(37, 203, 189, 0.24);
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
 .drop-zone:hover .drop-cta,
 .drop-zone:focus-visible .drop-cta,
 .drop-zone.drag-over .drop-cta {
-  background: var(--coral);
-  color: var(--ink);
+  border-color: rgba(37, 203, 189, 0.82);
+  background: var(--aqua);
+  box-shadow:
+    0 0 0 4px rgba(37, 203, 189, 0.16),
+    0 14px 30px rgba(37, 203, 189, 0.28);
   transform: translateY(-1px);
 }
 
